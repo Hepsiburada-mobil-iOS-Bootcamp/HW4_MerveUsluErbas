@@ -22,7 +22,7 @@ class BaseViewController<V>: UIViewController {
     }
     
     func prepareViewControllerConfigurations() {
-        view.backgroundColor = .red
+        view.backgroundColor = .white
     }
     
 }

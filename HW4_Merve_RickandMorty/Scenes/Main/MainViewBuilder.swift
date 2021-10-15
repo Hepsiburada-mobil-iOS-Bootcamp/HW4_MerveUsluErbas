@@ -17,12 +17,12 @@ class MainViewBuilder {
         let viewModel = MainViewModel(formatter: characterListFormatter)
         let viewController = MainViewController(viewModel: viewModel)
         let navigationViewController = UINavigationController(rootViewController: viewController)
-        viewController.title = "Characters"
+        viewController.title = "RICK AND MORTY"
         viewController.navigationController?.setNavigationBarHidden(true, animated: false)
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground
+        appearance.backgroundColor = .purple
         viewController.navigationController?.navigationBar.standardAppearance = appearance;
         viewController.navigationController?.navigationBar.scrollEdgeAppearance = viewController.navigationController?.navigationBar.standardAppearance
     
