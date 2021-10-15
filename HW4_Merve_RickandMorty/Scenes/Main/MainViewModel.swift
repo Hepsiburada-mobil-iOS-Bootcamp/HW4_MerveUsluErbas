@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 class MainViewModel {
     
@@ -13,6 +15,9 @@ class MainViewModel {
     private var characterResult = [CharacterResults]()
     private var rickAndMortyURL = "https://rickandmortyapi.com/api/character"
     private var state: CharacterListStateBlock?
+   
+    
+    
     func getCharacterList() {
         
         characterManager.delegate = self
@@ -40,6 +45,8 @@ extension MainViewModel : CharacterManagerDelegate {
 
 extension MainViewModel : ListProtocol {
     
+  
+    
     func getNumberOfItem(in section: Int) -> Int {
         return characterResult.count
     }
@@ -52,6 +59,9 @@ extension MainViewModel : ListProtocol {
         getCharacterList()
     }
     
+
     
     
 }
+
+

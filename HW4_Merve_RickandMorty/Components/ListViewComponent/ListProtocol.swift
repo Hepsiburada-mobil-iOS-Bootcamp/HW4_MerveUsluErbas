@@ -13,4 +13,5 @@ protocol ListProtocol: AnyObject {
     func getNumberOfItem(in section: Int) -> Int
     func getData(at index: Int) -> CharacterResults?
     func getNewCharacter()
+//    func openCharacterDetails(at index:Int)
 }

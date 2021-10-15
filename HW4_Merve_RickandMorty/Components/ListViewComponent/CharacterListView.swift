@@ -7,6 +7,13 @@
 
 import UIKit
 
+
+
+//protocol CharacterDetailProtocol {
+//
+//    func openCharacterDetail(with index: Int)
+//}
+
 class CharacterListView:BaseView  {
     
     deinit {
@@ -14,6 +21,7 @@ class CharacterListView:BaseView  {
     }
     
     weak var delegateListProtocol: ListProtocol?
+    var characterDetailDelegate : CharacterDetailProtocol?
     
     func reloadCollectionView() {
         DispatchQueue.main.async {
@@ -92,6 +100,8 @@ class CharacterListView:BaseView  {
 
 extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
+
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
@@ -122,7 +132,11 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
+        characterDetailDelegate?.openCharacterDetail(with: indexPath.row)
+      
+    }
     
     
 }

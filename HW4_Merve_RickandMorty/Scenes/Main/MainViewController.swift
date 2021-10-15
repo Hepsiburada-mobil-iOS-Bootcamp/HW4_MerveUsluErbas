@@ -32,6 +32,7 @@ class MainViewController : BaseViewController<MainViewModel>, UIScrollViewDelega
     private func addmainComponent() {
         
         mainComponent = CharacterListView()
+        mainComponent.characterDetailDelegate = self
         mainComponent.backgroundColor = .yellow
         mainComponent.translatesAutoresizingMaskIntoConstraints = false
         mainComponent.delegateListProtocol = viewModel
@@ -71,4 +72,18 @@ class MainViewController : BaseViewController<MainViewModel>, UIScrollViewDelega
 }
 
 
-
+extension MainViewController :CharacterDetailProtocol {
+    
+    func openCharacterDetail(with index: Int){
+        print(index)
+       print("ViewController")
+        let viewController = TestViewController()
+               viewController.title = "TEST"
+       //        self.navigationController?.pushViewController(viewController, animated: true)
+       //
+               let newNavigationController = UINavigationController(rootViewController: viewController)
+               newNavigationController.navigationBar.backgroundColor = .red
+               newNavigationController.navigationBar.tintColor = .green
+               self.present(newNavigationController, animated: true, completion: nil)
+    }
+}
