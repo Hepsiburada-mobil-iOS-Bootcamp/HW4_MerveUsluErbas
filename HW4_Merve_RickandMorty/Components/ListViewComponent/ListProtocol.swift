@@ -11,6 +11,6 @@ protocol ListProtocol: AnyObject {
     
   //  func askNumberOfSection() -> Int
     func getNumberOfItem(in section: Int) -> Int
-    func getData(at index: Int) -> GenericDataProtocol?
+    func getData(at index: Int) -> CharacterResults?
     
 }

@@ -31,6 +31,13 @@ class MainViewController : BaseViewController<MainViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        DispatchQueue.main.async {
+       //     self.mainComponent.collectionView.reloadData()
+            print("RELOADD ETTİM")
+        }
+        
+        
+       
     }
     
     private func addmainComponent() {

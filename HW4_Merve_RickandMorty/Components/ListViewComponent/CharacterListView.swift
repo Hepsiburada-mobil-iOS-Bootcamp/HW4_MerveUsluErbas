@@ -37,9 +37,14 @@ class CharacterListView:BaseView  {
             f.scrollDirection = .vertical
     
          //   f.itemSize = CGSize(width: 100/2, height: 100)
-            f.minimumInteritemSpacing = 20
+       // f.minimumInteritemSpacing = 2.0
         //CGFloat.greatestFiniteMagnitude
-            f.minimumLineSpacing = 20
+        //f.minimumLineSpacing = 2.0
+    
+//                f.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        f.minimumInteritemSpacing = 2.0
+        f.minimumLineSpacing = 2.0
+                
             return f
         }()
   
@@ -80,6 +85,8 @@ class CharacterListView:BaseView  {
     override func addComponents() {
         super.addComponents()
         addCollectionView()
+       
+       
     }
 //    
     private func addCollectionView() {
@@ -106,14 +113,17 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width / 3, height: 200)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 3, height: 100)
+        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(200))
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        return delegateListProtocol?.getNumberOfItem(in: section) ?? 1
-        print(delegateListProtocol?.getNumberOfItem(in: section))
-      //  return 10
+    
     }
     
 
@@ -121,18 +131,23 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let data = delegateListProtocol?.getData(at: indexPath.row) else { fatalError("Please provide data") }
-
+        print("SPECİES")
+        print(data.species)
+//
         guard let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: ViewCell.identifier, for: indexPath) as? ViewCell) else {return UICollectionViewCell()}
-
-        cell.setData(by: data)
+//
+        //cell.setData(by: data)
       //  cell.backgroundColor = .blue
-        
+    //    cell.labell.text = "Deneme"
+        cell.backgroundColor = UIColor.yellow
+        cell.configure(with: data)
+       
         
 //        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
 //        myCell.backgroundColor = UIColor.blue
 //        return myCell
-        
         return cell
+//        return cell
     }
 
 

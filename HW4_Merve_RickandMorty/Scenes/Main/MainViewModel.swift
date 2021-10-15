@@ -53,8 +53,10 @@ extension MainViewModel : ListProtocol {
         return characterResult.count
     }
     
-    func getData(at index: Int) -> GenericDataProtocol? {
-        return formatter.getItem(from: characterResult[index])
+    func getData(at index: Int) -> CharacterResults? {
+        //return formatter.getItem(from: characterResult[index])
+        print("Get data içi \(characterResult[index])")
+        return characterResult[index]
     }
     
     
