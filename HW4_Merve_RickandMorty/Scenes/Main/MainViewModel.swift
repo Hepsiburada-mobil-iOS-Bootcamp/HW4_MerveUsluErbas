@@ -9,40 +9,26 @@ import Foundation
 
 class MainViewModel {
     
-   private var characterManager = CharacterManager()
-   private var characterResult = [CharacterResults]()
-    
-   private var rickAndMortyURL = "https://rickandmortyapi.com/api/character"
-   private let formatter: DataFormatterProtocol
-   private var state: CharacterListStateBlock?
-   
-    init(formatter: DataFormatterProtocol) {
-        self.formatter = formatter
-    }
-    
-    
+    private var characterManager = CharacterManager()
+    private var characterResult = [CharacterResults]()
+    private var rickAndMortyURL = "https://rickandmortyapi.com/api/character"
+    private var state: CharacterListStateBlock?
     func getCharacterList() {
         
         characterManager.delegate = self
         characterManager.fetchCharacter(with: rickAndMortyURL)
-        print(rickAndMortyURL)
-       // characterManager
     }
-   
+    
     func subscribeState(completion: @escaping CharacterListStateBlock) {
         state = completion
     }
-    
-
-    
-    
     
 }
 
 extension MainViewModel : CharacterManagerDelegate {
     
     func pullCharacter(character: CharacterData) {
-     
+        
         characterResult.append(contentsOf:character.results)
         if character.info.next != nil {
             rickAndMortyURL = character.info.next!
@@ -55,18 +41,14 @@ extension MainViewModel : CharacterManagerDelegate {
 extension MainViewModel : ListProtocol {
     
     func getNumberOfItem(in section: Int) -> Int {
-       
         return characterResult.count
     }
     
     func getData(at index: Int) -> CharacterResults? {
-        //return formatter.getItem(from: characterResult[index])
-       
         return characterResult[index]
     }
     
     func getNewCharacter () {
-        
         getCharacterList()
     }
     

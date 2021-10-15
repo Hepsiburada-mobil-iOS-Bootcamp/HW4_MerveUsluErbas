@@ -19,7 +19,7 @@ struct Info : Codable {
     let pages : Int?
     let next : String?
     let prev : String?
-   // let prev: JSONNull?
+    // let prev: JSONNull?
 }
 
 struct CharacterResults : Codable {
@@ -27,8 +27,8 @@ struct CharacterResults : Codable {
     let name:String
     let status:String
     let species:String
- //   let species: Species
-//let status:Status
+    //   let species: Species
+    //let status:Status
     let image:String
 }
 

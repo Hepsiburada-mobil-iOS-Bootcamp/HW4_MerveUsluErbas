@@ -11,11 +11,11 @@ import Foundation
 class ViewCellData: GenericDataProtocol {
     
   //  private(set) var imageData: CustomImageViewComponentData
-    private(set) var cellInfo: LabelPackComponentData
- 
-     init(cellInfo: LabelPackComponentData) {
-         self.cellInfo = cellInfo
-     }
+//    private(set) var cellInfo: LabelPackComponentData
+// 
+//     init(cellInfo: LabelPackComponentData) {
+//         self.cellInfo = cellInfo
+//     }
     
     
     

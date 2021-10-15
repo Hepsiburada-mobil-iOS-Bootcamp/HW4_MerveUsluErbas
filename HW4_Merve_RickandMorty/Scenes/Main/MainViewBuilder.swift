@@ -13,8 +13,7 @@ class MainViewBuilder {
     
     class func build() -> UIViewController {
         
-        let characterListFormatter = DataFormatter()
-        let viewModel = MainViewModel(formatter: characterListFormatter)
+        let viewModel = MainViewModel()
         let viewController = MainViewController(viewModel: viewModel)
         let navigationViewController = UINavigationController(rootViewController: viewController)
         viewController.title = "RICK AND MORTY"
@@ -25,7 +24,7 @@ class MainViewBuilder {
         appearance.backgroundColor = .purple
         viewController.navigationController?.navigationBar.standardAppearance = appearance;
         viewController.navigationController?.navigationBar.scrollEdgeAppearance = viewController.navigationController?.navigationBar.standardAppearance
-    
+        
         return navigationViewController
         
         
