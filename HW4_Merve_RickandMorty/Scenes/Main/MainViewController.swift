@@ -77,7 +77,8 @@ extension MainViewController :CharacterDetailProtocol {
     func openCharacterDetail(with index: Int){
         print(index)
        print("ViewController")
-        let viewController = TestViewController()
+        let viewController = CharacterDetailController()
+        viewController.characterId = index
                viewController.title = "TEST"
        //        self.navigationController?.pushViewController(viewController, animated: true)
        //
