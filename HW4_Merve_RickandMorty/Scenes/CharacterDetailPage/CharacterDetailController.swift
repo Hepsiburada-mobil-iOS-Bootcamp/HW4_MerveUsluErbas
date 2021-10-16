@@ -34,20 +34,15 @@ class CharacterDetailController: UIViewController,SingleCharacterManagerDelegate
     var selectedCharacter : CharacterResults!
     
     
-
-    
-    
-    
     func pullSingleCharacter(character: SingleCharacterModel) {
         currentCharacterData=character.tableRepresentation
         DispatchQueue.main.async {
             self.tableView.reloadData()
             let urlCharacter = URL(string: character.image)
-      //      self.imageView.kf.setImage(with: urlCharacter)
+
         }
-
-
     }
+    
    
 
     override func viewDidLoad() {
@@ -62,6 +57,7 @@ class CharacterDetailController: UIViewController,SingleCharacterManagerDelegate
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
+        
         tableView.dataSource = self
         singleCharacterManager.delegate=self
         let url="https://rickandmortyapi.com/api/character/\(characterId)"
@@ -69,13 +65,11 @@ class CharacterDetailController: UIViewController,SingleCharacterManagerDelegate
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        print("Karakter v2 \(characterId)")
         
      
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(currentCharacterData.count)
         return currentCharacterData.count
     }
     

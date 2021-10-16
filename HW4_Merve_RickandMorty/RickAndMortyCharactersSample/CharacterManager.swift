@@ -12,11 +12,7 @@ protocol CharacterManagerDelegate {
 }
 
 struct CharacterManager {
-    
-   
     var delegate:CharacterManagerDelegate?
-    
-   
     func fetchCharacter(with urlLink:String)  {
         
         if let url = URL(string: urlLink){
@@ -30,7 +26,6 @@ struct CharacterManager {
                 }
                 
                 if let safeData=data {
-                 //   let dataString = String(data: safeData, encoding: .utf8)
                         if let character = self.parseJSON(characterData: safeData){
                             self.delegate?.pullCharacter(character: character)
                     }

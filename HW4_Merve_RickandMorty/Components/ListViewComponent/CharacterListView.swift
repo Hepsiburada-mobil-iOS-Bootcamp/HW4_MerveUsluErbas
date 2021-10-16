@@ -5,14 +5,9 @@
 //  Created by Cokomel on 11.10.2021.
 //
 
+import Foundation
 import UIKit
-
-
-
-//protocol CharacterDetailProtocol {
-//
-//    func openCharacterDetail(with index: Int)
-//}
+import SwiftUI
 
 class CharacterListView:BaseView  {
     
@@ -39,7 +34,7 @@ class CharacterListView:BaseView  {
         //CGFloat.greatestFiniteMagnitude
         //f.minimumLineSpacing = 2.0
         
-        //                f.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        //f.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
         f.minimumInteritemSpacing = 5.0
         f.minimumLineSpacing = 10.0
         
@@ -55,7 +50,9 @@ class CharacterListView:BaseView  {
         view.dataSource = self
         
         view.register(ViewCell.self, forCellWithReuseIdentifier: ViewCell.identifier)
-        view.backgroundColor = .white
+        //let color = UIColor(hexString: "#44A08D")
+        view.backgroundColor = .black
+        
         return view
     }()
     
@@ -103,17 +100,17 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(200))
+        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 15), height: CGFloat(200))
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return delegateListProtocol?.getNumberOfItem(in: section) ?? 1
+        return delegateListProtocol?.getNumberOfItem(in: section) ?? 0
         
     }
     
@@ -126,7 +123,6 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
         //
         guard let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: ViewCell.identifier, for: indexPath) as? ViewCell) else {return UICollectionViewCell()}
         
-        cell.backgroundColor = UIColor.yellow
         cell.setData(with: data)
         
         return cell
@@ -141,3 +137,32 @@ extension CharacterListView: UICollectionViewDelegate, UICollectionViewDataSourc
     
 }
 
+
+//extension UIColor {
+//    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+//        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+//        let scanner = Scanner(string: hexString)
+//        if (hexString.hasPrefix("#")) {
+//            scanner.scanLocation = 1
+//        }
+//        var color: UInt32 = 0
+//        scanner.scanHexInt32(&color)
+//        let mask = 0x000000FF
+//        let r = Int(color >> 16) & mask
+//        let g = Int(color >> 8) & mask
+//        let b = Int(color) & mask
+//        let red   = CGFloat(r) / 255.0
+//        let green = CGFloat(g) / 255.0
+//        let blue  = CGFloat(b) / 255.0
+//        self.init(red:red, green:green, blue:blue, alpha:alpha)
+//    }
+//    func toHexString() -> String {
+//        var r:CGFloat = 0
+//        var g:CGFloat = 0
+//        var b:CGFloat = 0
+//        var a:CGFloat = 0
+//        getRed(&r, green: &g, blue: &b, alpha: &a)
+//        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+//        return String(format:"#%06x", rgb)
+//    }
+//}

@@ -14,7 +14,7 @@ protocol SingleCharacterManagerDelegate {
 struct SingleCharacterManager {
     
     var delegate:SingleCharacterManagerDelegate?
-
+    
     func fetchCharacter(with urlLink:String)  {
         
         if let url = URL(string: urlLink){
@@ -28,14 +28,12 @@ struct SingleCharacterManager {
                 }
                 
                 if let safeData=data {
-                 //   let dataString = String(data: safeData, encoding: .utf8)
-             
-                        
-                        if let character = self.parseJSONSingle(characterData: safeData){
-                            self.delegate?.pullSingleCharacter(character: character)
-                            
-                        }
-                   
+                    //   let dataString = String(data: safeData, encoding: .utf8)
+                    
+                    
+                    if let character = self.parseJSONSingle(characterData: safeData){
+                        self.delegate?.pullSingleCharacter(character: character)
+                    }
                 }
                 
             }
@@ -49,6 +47,7 @@ struct SingleCharacterManager {
         
         do {
             let decodedData = try decoder.decode(SingleCharacterData.self, from: characterData)
+            
             let id=decodedData.id
             let name=decodedData.name
             let status=decodedData.status

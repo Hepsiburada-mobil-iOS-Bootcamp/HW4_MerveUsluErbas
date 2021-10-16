@@ -7,10 +7,10 @@
 
 import UIKit
 
-class MainViewController : BaseViewController<MainViewModel>, UIScrollViewDelegate  {
+class MainViewController : BaseViewController<MainViewModel> {
     
     deinit {
-        print("DEINIT CharacterListViewController")
+        print("DEINIT MainViewController")
     }
     
     private var mainComponent: CharacterListView!
@@ -56,7 +56,6 @@ class MainViewController : BaseViewController<MainViewModel>, UIScrollViewDelega
             case .done:
                 print("data is ready")
                 self?.mainComponent.reloadCollectionView()
-                print("Reload ettim")
             case .loading:
                 print("data is getting")
             case .failure:
@@ -75,16 +74,7 @@ class MainViewController : BaseViewController<MainViewModel>, UIScrollViewDelega
 extension MainViewController :CharacterDetailProtocol {
     
     func openCharacterDetail(with index: Int){
-        print(index)
-       print("ViewController")
-        let viewController = CharacterDetailController()
-        viewController.characterId = index
-               viewController.title = "TEST"
-       //        self.navigationController?.pushViewController(viewController, animated: true)
-       //
-               let newNavigationController = UINavigationController(rootViewController: viewController)
-               newNavigationController.navigationBar.backgroundColor = .red
-               newNavigationController.navigationBar.tintColor = .green
-               self.present(newNavigationController, animated: true, completion: nil)
+        let viewController = CharacterDetailViewBuilder.build(with: index)
+              self.present(viewController, animated: true, completion: nil)
     }
 }

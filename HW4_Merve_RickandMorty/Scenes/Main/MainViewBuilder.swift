@@ -21,7 +21,7 @@ class MainViewBuilder {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .purple
+        appearance.backgroundColor = .darkGray
         viewController.navigationController?.navigationBar.standardAppearance = appearance;
         viewController.navigationController?.navigationBar.scrollEdgeAppearance = viewController.navigationController?.navigationBar.standardAppearance
         

@@ -1,5 +1,4 @@
-import UIKit
-import Kingfisher
+
 ////
 ////  ViewCell.swift
 ////  HW4_Merve_RickandMorty
@@ -8,7 +7,8 @@ import Kingfisher
 ////
 //
 
-
+import UIKit
+import Kingfisher
 class ViewCell: UICollectionViewCell {
     
     static var identifier: String {
@@ -20,7 +20,9 @@ class ViewCell: UICollectionViewCell {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.clipsToBounds = true
-        temp.backgroundColor = .yellow
+        temp.layer.cornerRadius = 20
+       // let colorContainer = UIColor(hexString: "#0575E6")
+        temp.backgroundColor = .gray
         return temp
     }()
     
@@ -92,6 +94,7 @@ class ViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "kedi")!
+        imageView.makeRounded()
         return imageView
     }()
     

@@ -12,6 +12,5 @@ protocol CharacterDetailProtocol: AnyObject {
     
 
     func openCharacterDetail(with index: Int)
- 
-//    func openCharacterDetails(at index:Int)
+
 }
