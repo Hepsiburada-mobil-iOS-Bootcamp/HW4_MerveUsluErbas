@@ -9,7 +9,7 @@ import Foundation
 
 
 struct SingleCharacterData : Decodable {
-   
+    
     let id:Int
     let name:String
     let status:String
@@ -19,12 +19,12 @@ struct SingleCharacterData : Decodable {
     let origin:Origin
     let location:Origin
     let episode:[String]
-
+    
     
 }
 
 struct Origin: Decodable {
     let name:String
     let url:String
-
+    
 }

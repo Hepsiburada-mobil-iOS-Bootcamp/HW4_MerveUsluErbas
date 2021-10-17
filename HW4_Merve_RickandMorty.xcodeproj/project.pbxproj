@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		52493E1E2715EE6B00B80A1E /* ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52493E1D2715EE6B00B80A1E /* ViewCell.swift */; };
-		52493E222715EECD00B80A1E /* BaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52493E212715EECD00B80A1E /* BaseViewCell.swift */; };
 		52493E252716064400B80A1E /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52493E242716064400B80A1E /* CharacterData.swift */; };
 		52493E27271606A400B80A1E /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52493E26271606A400B80A1E /* CharacterManager.swift */; };
 		52493E29271616EA00B80A1E /* ListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52493E28271616EA00B80A1E /* ListProtocol.swift */; };
@@ -25,7 +24,6 @@
 		529026BA2719C4140017ED6E /* SingleCharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529026B92719C4140017ED6E /* SingleCharacterData.swift */; };
 		529026BC2719C43B0017ED6E /* SingleCharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529026BB2719C43B0017ED6E /* SingleCharacterManager.swift */; };
 		529026BE2719C4590017ED6E /* SingleCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529026BD2719C4590017ED6E /* SingleCharacterModel.swift */; };
-		529026C02719C49F0017ED6E /* CharacterDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529026BF2719C49F0017ED6E /* CharacterDetailController.swift */; };
 		52926019271B0AC3003DA882 /* DetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52926018271B0AC3003DA882 /* DetailPageView.swift */; };
 		5292601B271B0DA4003DA882 /* DetailPageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292601A271B0DA4003DA882 /* DetailPageProtocol.swift */; };
 		529D07B02714A9DD00EF1A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529D07AF2714A9DD00EF1A01 /* AppDelegate.swift */; };
@@ -45,7 +43,6 @@
 /* Begin PBXFileReference section */
 		52493E1B2714C28D00B80A1E /* DefaultNetworkOperationPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DefaultNetworkOperationPackage; path = ../DefaultNetworkOperationPackage; sourceTree = "<group>"; };
 		52493E1D2715EE6B00B80A1E /* ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCell.swift; sourceTree = "<group>"; };
-		52493E212715EECD00B80A1E /* BaseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewCell.swift; sourceTree = "<group>"; };
 		52493E242716064400B80A1E /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
 		52493E26271606A400B80A1E /* CharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManager.swift; sourceTree = "<group>"; };
 		52493E28271616EA00B80A1E /* ListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocol.swift; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 		529026B92719C4140017ED6E /* SingleCharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterData.swift; sourceTree = "<group>"; };
 		529026BB2719C43B0017ED6E /* SingleCharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterManager.swift; sourceTree = "<group>"; };
 		529026BD2719C4590017ED6E /* SingleCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterModel.swift; sourceTree = "<group>"; };
-		529026BF2719C49F0017ED6E /* CharacterDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailController.swift; sourceTree = "<group>"; };
 		52926018271B0AC3003DA882 /* DetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageView.swift; sourceTree = "<group>"; };
 		5292601A271B0DA4003DA882 /* DetailPageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageProtocol.swift; sourceTree = "<group>"; };
 		529D07AC2714A9DD00EF1A01 /* HW4_Merve_RickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW4_Merve_RickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +122,6 @@
 				529026AF271997310017ED6E /* CharacterDetailViewBuilder.swift */,
 				529026B52719B39A0017ED6E /* CharacterDetailViewModel.swift */,
 				529026B72719B3C00017ED6E /* CharacterDetailViewController.swift */,
-				529026BF2719C49F0017ED6E /* CharacterDetailController.swift */,
 			);
 			path = CharacterDetailPage;
 			sourceTree = "<group>";
@@ -223,7 +218,6 @@
 				527CA9B22718ACF3003F8B50 /* GenericValueProtocol.swift */,
 				527CA9AD2718ABE7003F8B50 /* GenericBaseView.swift */,
 				529D07D82714B13C00EF1A01 /* BaseView.swift */,
-				52493E212715EECD00B80A1E /* BaseViewCell.swift */,
 				527CA99E271897FE003F8B50 /* GenericDataProtocol.swift */,
 			);
 			path = BaseComponent;
@@ -321,7 +315,6 @@
 				529D07C92714AB7F00EF1A01 /* MainViewBuilder.swift in Sources */,
 				529026BA2719C4140017ED6E /* SingleCharacterData.swift in Sources */,
 				529026B42719A6530017ED6E /* CharacterDetailProtocol.swift in Sources */,
-				52493E222715EECD00B80A1E /* BaseViewCell.swift in Sources */,
 				529026B0271997310017ED6E /* CharacterDetailViewBuilder.swift in Sources */,
 				529D07D12714ACED00EF1A01 /* BaseViewController.swift in Sources */,
 				529D07D92714B13C00EF1A01 /* BaseView.swift in Sources */,
@@ -333,7 +326,6 @@
 				529026B62719B39A0017ED6E /* CharacterDetailViewModel.swift in Sources */,
 				529026B82719B3C00017ED6E /* CharacterDetailViewController.swift in Sources */,
 				52493E252716064400B80A1E /* CharacterData.swift in Sources */,
-				529026C02719C49F0017ED6E /* CharacterDetailController.swift in Sources */,
 				529026BE2719C4590017ED6E /* SingleCharacterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

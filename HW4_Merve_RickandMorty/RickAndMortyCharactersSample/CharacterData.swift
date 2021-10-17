@@ -26,18 +26,6 @@ struct CharacterResults : Codable {
     let name:String
     let status:String
     let species:String
-    //let species: Species
-    //let status:Status
     let image:String
 }
 
-//enum Species: String, Codable {
-//    case alien = "Alien"
-//    case human = "Human"
-//}
-//
-//enum Status: String, Codable {
-//    case alive = "Alive"
-//    case dead = "Dead"
-//    case unknown = "unknown"
-//}

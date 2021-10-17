@@ -12,7 +12,7 @@ class CharacterDetailViewController : BaseViewController<CharacterDetailViewMode
     
     
     deinit {
-        print("DEINIT CharacterListViewController")
+        print("DEINIT CharacterDetailViewController")
     }
     
     private var mainComponent: DetailPageView!
@@ -48,7 +48,7 @@ class CharacterDetailViewController : BaseViewController<CharacterDetailViewMode
             mainComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
-        mainComponent.reloadTableView()
+      //  mainComponent.reloadTableView()
     }
     
     

@@ -47,10 +47,7 @@ class DetailPageView:BaseView  {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        //        imageView.clipsToBounds = true
-        //        imageView.layer.cornerRadius = 4
         imageView.makeRounded()
-        //imageView.image = UIImage(named: "kedi")!
         return imageView
     }()
     

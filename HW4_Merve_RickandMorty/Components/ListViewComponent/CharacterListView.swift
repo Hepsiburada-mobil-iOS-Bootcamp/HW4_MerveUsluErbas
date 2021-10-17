@@ -12,7 +12,7 @@ import SwiftUI
 class CharacterListView:BaseView  {
     
     deinit {
-        print("DEINIT ItemListView")
+        print("DEINIT CharacterListView")
     }
     
     weak var delegateListProtocol: ListProtocol?
@@ -84,7 +84,7 @@ class CharacterListView:BaseView  {
         
         if tableViewContentSize != 0 {
             if position > (tableViewContentSize-scrollViewSize){
-                print("fetching")
+                print("fetching, Pagination is enabled.")
                 delegateListProtocol?.getNewCharacter()
                 
             }

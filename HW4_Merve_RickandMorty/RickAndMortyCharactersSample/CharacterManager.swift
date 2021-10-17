@@ -26,8 +26,8 @@ struct CharacterManager {
                 }
                 
                 if let safeData=data {
-                        if let character = self.parseJSON(characterData: safeData){
-                            self.delegate?.pullCharacter(character: character)
+                    if let character = self.parseJSON(characterData: safeData){
+                        self.delegate?.pullCharacter(character: character)
                     }
                     
                 }
@@ -49,5 +49,5 @@ struct CharacterManager {
             return nil
         }
     }
-
+    
 }

@@ -28,9 +28,6 @@ struct SingleCharacterManager {
                 }
                 
                 if let safeData=data {
-                    //   let dataString = String(data: safeData, encoding: .utf8)
-                    
-                    
                     if let character = self.parseJSONSingle(characterData: safeData){
                         self.delegate?.pullSingleCharacter(character: character)
                     }
@@ -48,19 +45,8 @@ struct SingleCharacterManager {
         do {
             let decodedData = try decoder.decode(SingleCharacterData.self, from: characterData)
             
-            let id=decodedData.id
-            let name=decodedData.name
-            let status=decodedData.status
-            let species=decodedData.species
-            let image=decodedData.image
-            let gender=decodedData.gender
-            let originName=decodedData.origin.name
-            let originUrl=decodedData.origin.url
-            let locationName=decodedData.location.name
-            let locationUrl=decodedData.location.url
-            let episode=decodedData.episode
+            let character = SingleCharacterModel(id: decodedData.id, name: decodedData.name, status: decodedData.status, species: decodedData.species, image: decodedData.image, gender: decodedData.gender, originName: decodedData.origin.name, originUrl: decodedData.origin.url, locationName: decodedData.location.name, locationUrl: decodedData.location.url, episode: decodedData.episode)
             
-            let character = SingleCharacterModel(id: id, name: name, status:status, species: species, image: image, gender: gender, originName: originName, originUrl: originUrl, locationName: locationName, locationUrl: locationUrl, episode: episode)
             
             return character
         } catch  {
